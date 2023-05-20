@@ -69,7 +69,7 @@ const Home = () => {
           </section>
         </PageWrapper>
 
-        <Modal title="Co-own a Land" show={showModal} onModalClose={closeModal}>
+        <Modal title="Enter your details" show={showModal} onModalClose={closeModal}>
           <div className="text-2xl">
             <form
               onSubmit={addMail}
@@ -112,7 +112,7 @@ const Home = () => {
                     type="submit"
                     className="px-16 py-4 rounded-lg !text-white"
                   >
-                    Join Waitlist (get a free co-owned land)
+                    Join Waitlist
                   </Button>
                 </div>
               </section>
