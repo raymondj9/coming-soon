@@ -7,7 +7,7 @@ import bg from "../../assets/m-bg.jpg";
 const MainLayout = ({ children }) => {
   return (
     <Layout className="overflow-hidden">
-      <div className="min-h-screen flex flex-col justify-between main bg-black/80">
+      <div className="min-h-screen  w-full flex flex-col justify-between main bg-black/80">
         <div className="h-full">
           <Navbar />
           <div className="content h-[80vh] flex items-center">
@@ -22,6 +22,8 @@ const MainLayout = ({ children }) => {
 
 const Layout = styled.div`
   background-image: url(${bg});
+  background-repeat: repeat-x;
+  background-size: cover;
   * {
     color: #fff;
   }

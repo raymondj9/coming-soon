@@ -16,6 +16,9 @@ const Home = () => {
   let timeObject = new Date();
   let milliseconds = 864000 * 1000;
   timeObject = new Date(timeObject.getTime() + milliseconds);
+  let ends_in = timeObject.getTime() / 1000;
+
+  const [endIn, setEndIn] = useState(ends_in);
 
   function closeModal() {
     setShowModal(false);
@@ -25,7 +28,7 @@ const Home = () => {
     e.preventDefault();
   }
 
-  function addMail() {
+  function addMail(e) {
     e.preventDefault();
     dialog.loading();
     setInterval(() => {
@@ -43,7 +46,7 @@ const Home = () => {
                 <h1 className="text-center font-thin text-5xl md:text-6xl lg:text-8xl uppercase tracking-widest mb-4">
                   Coming Soon
                 </h1>
-                <Countdown end_in={timeObject.getTime() / 1000} />
+                <Countdown end_in={endIn} />
               </div>
             </div>
           </section>
@@ -58,7 +61,11 @@ const Home = () => {
           </section>
         </PageWrapper>
 
-        <Modal title="Enter your details" show={showModal} onModalClose={closeModal}>
+        <Modal
+          title="Enter your details"
+          show={showModal}
+          onModalClose={closeModal}
+        >
           <div className="text-2xl">
             <form
               onSubmit={addMail}
