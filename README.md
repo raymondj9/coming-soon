@@ -1,2 +1,2 @@
 # coming-soon
-A Project Pre-launch landing page build with React
+A Project Pre-launch landing page built with React
