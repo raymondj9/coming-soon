@@ -8,9 +8,10 @@ const Countdown = ({ end_in }) => {
   const refhr = useRef();
   const refday = useRef();
   const [showCountdown, setShowCountdown] = useState(false);
+  let timer = null;
 
   function drawIn() {
-    setInterval(() => {
+    timer = setInterval(() => {
       let time = getTimeRemaining(end_in * 1000);
       if (refsec.current.innerHTML != time.seconds) {
         refsec.current.innerHTML = time.seconds;
@@ -46,6 +47,7 @@ const Countdown = ({ end_in }) => {
   }
 
   useEffect(() => {
+    clearInterval(timer);
     if (end_in > 0) {
       drawIn();
       setShowCountdown(true);

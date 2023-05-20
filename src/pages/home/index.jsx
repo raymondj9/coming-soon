@@ -17,8 +17,6 @@ const Home = () => {
   let milliseconds = 864000 * 1000;
   timeObject = new Date(timeObject.getTime() + milliseconds);
 
-  //   alert(timeObject.getTime())
-
   function closeModal() {
     setShowModal(false);
   }
@@ -30,18 +28,9 @@ const Home = () => {
   function addMail() {
     e.preventDefault();
     dialog.loading();
-    var formData = new FormData(e.currentTarget);
-    axios
-      .post("/add-to-waitlist", formData)
-      .then((response) => {
-        dialog.success(response.data.message);
-      })
-      .catch((error) => {
-        dialog.error(error.response);
-      })
-      .finally(() => {
-        // dialog.close()
-      });
+    setInterval(() => {
+      dialog.success("Thanks for joining our waitlist!");
+    }, 2000);
   }
 
   return (
