@@ -6,9 +6,7 @@ const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <App> */}
           <Route path="/" Component={Home} />
-        {/* </App> */}
       </Routes>
     </BrowserRouter>
   );
